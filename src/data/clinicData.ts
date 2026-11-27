@@ -1,3 +1,9 @@
+import heroClinicImg from '../assets/images/hero_physio_clinic_1795760442535.jpg';
+import manualTherapyImg from '../assets/images/manual_therapy_rehab_1795760442529.jpg';
+import exerciseRehabImg from '../assets/images/exercise_rehab_movement_1795760442358.jpg';
+import therapistPortraitImg from '../assets/images/therapist_portrait_1795760444680.jpg';
+import sportsAssessmentImg from '../assets/images/sports_rehab_assessment_1795760445281.jpg';
+
 export interface ConditionItem {
   id: string;
   name: string;
@@ -60,11 +66,11 @@ export const CLINIC_INFO = {
 };
 
 export const CLINIC_IMAGES = {
-  hero: '/src/assets/images/hero_physio_clinic_1795760442535.jpg',
-  manualTherapy: '/src/assets/images/manual_therapy_rehab_1795760442529.jpg',
-  exerciseRehab: '/src/assets/images/exercise_rehab_movement_1795760442358.jpg',
-  therapist: '/src/assets/images/therapist_portrait_1795760444680.jpg',
-  sportsAssessment: '/src/assets/images/sports_rehab_assessment_1795760445281.jpg',
+  hero: heroClinicImg,
+  manualTherapy: manualTherapyImg,
+  exerciseRehab: exerciseRehabImg,
+  therapist: therapistPortraitImg,
+  sportsAssessment: sportsAssessmentImg,
 };
 
 export const CONDITIONS: ConditionItem[] = [
