@@ -28,6 +28,28 @@ export default defineConfig(() => {
           }
         },
       },
+      // Mirrors built index.html + bundled assets into /docs so GitHub Pages
+      // "Deploy from a branch -> /docs" works immediately without CI setup.
+      {
+        name: 'sync-github-pages-docs',
+        apply: 'build',
+        closeBundle(error?: Error): void {
+          if (error) {
+            return;
+          }
+          const distDir = path.resolve(__dirname, 'dist');
+          const docsDir = path.resolve(__dirname, 'docs');
+          const distIndex = path.join(distDir, 'index.html');
+          const distAssets = path.join(distDir, 'assets');
+          if (fs.existsSync(distIndex) && fs.existsSync(distAssets)) {
+            fs.rmSync(docsDir, {recursive: true, force: true});
+            fs.mkdirSync(docsDir, {recursive: true});
+            fs.cpSync(distIndex, path.join(docsDir, 'index.html'));
+            fs.cpSync(distAssets, path.join(docsDir, 'assets'), {recursive: true, force: true});
+            fs.writeFileSync(path.join(docsDir, '.nojekyll'), '');
+          }
+        },
+      },
     ],
     resolve: {
       alias: {
