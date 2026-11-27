@@ -1,0 +1,8 @@
+{
+  "name": "More Than Physio",
+  "description": "Expert physiotherapy and rehabilitation clinic in Greater Kailash 1 (GK-1), New Delhi. Rated 5.0 on Google from 84+ patient reviews. Book a consultation today.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
